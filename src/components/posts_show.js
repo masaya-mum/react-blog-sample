@@ -6,12 +6,17 @@ class PostsShow extends Component {
 
     componentDidMount() {
         // this.props.match.params.{params} defined in index.js : router setting
-        const {id} = this.props.match.params.id;
+        const id = this.props.match.params.id;
         this.props.fetchPost(id);
     }
 
     render() {
         const { post } = this.props;
+
+        if (!post) {
+            return <div>Loading...</div>;
+        }
+
         return (
             <div>
               <h3>{post.title}</h3>
