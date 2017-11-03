@@ -15,9 +15,12 @@ class PostsNew extends Component {
                 // same as : onChange={field.input.onChange}
                 //           onFocus={field.input.onFocue}
                 />
-              {field.meta.error}
+              {field.meta.touched ? field.meta.error : ''}
             </div>
         );
+        // meta.pristine : not yet selected
+        // meta.touched : selected, focused or focused away
+        // meta.invalid :  invalid
     }
     onSubmit(values) {
         console.log(values);
