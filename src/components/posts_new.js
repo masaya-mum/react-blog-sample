@@ -14,7 +14,8 @@ class PostsNew extends Component {
                 // ... : open properties
                 // same as : onChange={field.input.onChange}
                 //           onFocus={field.input.onFocue}
-              />
+                />
+              {field.meta.error}
             </div>
         );
     }
@@ -47,15 +48,15 @@ function validate(values) {
 
     // Validate the ipunts from 'values'
     if(!values.title || values.title.length < 3) {
-        errors.title = "enter a title that is at least 3 chars!"
+        errors.title = "enter a title that is at least 3 chars!";
     }
 
     if(!values.categories) {
-        errors.categories = "enter a categories!"
+        errors.categories = "enter a categories!";
     }
 
     if(!values.content) {
-        errors.content = "enter a content!"
+        errors.content = "enter a content!";
     }
 
     // if errors is empty, the form is fine to submit
